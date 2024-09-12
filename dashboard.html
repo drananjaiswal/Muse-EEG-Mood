@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Tracking Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Emotion Tracking Dashboard</h1>
+        <div id="emotion-history-chart"></div>
+        <div id="emotion-summary">
+            <h2>Emotion Summary (Last 24 Hours)</h2>
+            <p>The numbers represent the count of each emotion over the past 24 hours.</p>
+            <div id="emotion-counts"></div>
+        </div>
+        <div style="text-align: center;">
+            <a href="/" class="button">Back to Real-time View</a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

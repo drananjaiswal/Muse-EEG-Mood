@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muse EEG Emotion Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Muse EEG Emotion Classifier</h1>
+        <div id="connection-controls">
+            <button id="connect-muse">Connect Muse</button>
+            <button id="disconnect-muse" disabled>Disconnect Muse</button>
+        </div>
+        <div id="connection-status">Status: Disconnected</div>
+        <div id="emotion-container">
+            <div id="emotion-label">Current Emotion:</div>
+            <div id="emotion"><span id="emotion-emoji">🔄</span> <span id="emotion-text">Connecting...</span></div>
+        </div>
+        <div id="eeg-chart"></div>
+        <div id="features-container">
+            <h2>Extracted Features</h2>
+            <pre id="features"></pre>
+        </div>
+        <div id="band-powers-container">
+            <h2>Frequency Band Powers</h2>
+            <div id="band-powers-chart"></div>
+        </div>
+        <div style="text-align: center;">
+            <a href="/dashboard" class="button">View Emotion History Dashboard</a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
